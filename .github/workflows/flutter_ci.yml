@@ -25,8 +25,11 @@ jobs:
         run: flutter analyze
       - name: Run tests
         run: flutter test
+        working-directory: cabs/apps
       - name: Build App Bundle
         run: flutter build appbundle --release
+        working-directory: cabs/apps
       - name: Build iOS (optional)
         if: runner.os == 'macOS'
         run: flutter build ios --release
+        working-directory: cabs/apps
